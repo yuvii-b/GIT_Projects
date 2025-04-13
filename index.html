@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Translator UI</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <h1>Language Translator</h1>
-    <form>
+    <form method="get">
         <fieldset>
             <div class="container">
-                <label for="language">Select the language you give as input</label>
-                <select>
+                <label for="fromLanguage">Select the Input language</label>
+                <select name="fromLanguage" id="fromLanguage" >
                     <option disabled selected>Select Language</option>
-                    <option>Tamil</option>
-                    <option>English</option>
-                    <option>Hindi</option>
+                    <option value="tamil">Tamil</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
                 </select>
-                <textarea placeholder="Enter the text here..."></textarea>
             </div>
+            <textarea name="fromLanguageText" id="fromLanguageText" placeholder="Enter the text here..." rows="5"></textarea>
         </fieldset>
         <fieldset>
             <div class="container">
-                <label for="language">Select the language you want to translate to</label>
-                <select>
+                <label for="toLanguage">Select the Target language</label>
+                <select name="toLanguage" id="toLanguage" >
                     <option disabled selected>Select Language</option>
-                    <option>Tamil</option>
-                    <option>English</option>
-                    <option>Hindi</option>
+                    <option value="tamil">Tamil</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
                 </select>
-                <textarea placeholder="Output"></textarea>
             </div>
+            <textarea name="toLanguageText" id="toLanguageText" placeholder="Output" rows="5" readonly></textarea>
         </fieldset>
-        <button type="submit">translate</button>
+        <button type="submit">Translate</button>
     </form>
 </body>
 </html>
