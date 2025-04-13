@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Translator UI</title>
-    <link rel="icon" href="">
+    <link rel="icon" href="icon.avif">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,17 @@
 
 </head>
 <body>
+    <script src="index.js"></script>
     <h1>Language Translator</h1>
-    <form method="get">
+    <form method="post">
         <fieldset>
             <div class="container">
                 <label for="fromLanguage">Select the Input language</label>
                 <select name="fromLanguage" id="fromLanguage" >
                     <option disabled selected>Select Language</option>
-                    <option value="tamil">Tamil</option>
-                    <option value="english">English</option>
-                    <option value="hindi">Hindi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
                 </select>
             </div>
             <textarea name="fromLanguageText" id="fromLanguageText" placeholder="Enter the text here..." rows="5"></textarea>
@@ -39,7 +40,7 @@
             </div>
             <textarea name="toLanguageText" id="toLanguageText" placeholder="Output" rows="5" readonly></textarea>
         </fieldset>
-        <button type="submit">Translate</button>
+        <button type="button" onclick="doTranslate()">Translate</button>
     </form>
 </body>
 </html>
