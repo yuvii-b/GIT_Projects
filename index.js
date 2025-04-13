@@ -1,13 +1,18 @@
-function doTranslate()
-{
-    let inputLanguage = document.getElementById("fromLanguage").value;
-    let outputLanguage = document.getElementById("toLanguage").value;
-    let inputText = document.getElementById("fromLanguageText").value;
-    let translatedText;
-    if (!inputLanguage || !outputLanguage || inputText.trim() === "")
-    {
-        alert("Please fill in all fields!");
-        return;
-    }
-    document.getElementById("toLanguageText").value = translatedText;
+function doTranslate(){
+    const inputLanguage = document.getElementById("fromLanguage").value;
+    const text = document.getElementById("fromLanguageText").value;
+    const outputLanguage = document.getElementById("toLanguage").value;
+
+    fetch('http://localhost:5000/translate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({text: text, in: inputLanguage, out: outputLanguage})
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("toLanguageText").innerText = data.result;
+    })
+    .catch(error => alert('Error:', error))
 }
